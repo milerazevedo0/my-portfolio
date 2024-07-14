@@ -11,6 +11,12 @@ const Hero = () => {
     height: "100vh",
     display: "flex",
     alignItems: "center",
+    [theme.breakpoints.up('xs')]:{
+      paddiingTop:'100px'
+    },
+    [theme.breakpoints.up('md')]:{
+      paddiingTop:'0'
+    }
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
@@ -64,7 +70,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log('Download')}>
                     <CloudDownloadIcon />
                     <Typography>Download CV</Typography>
                   </StyledButton>
@@ -76,7 +82,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log('Contact')}>
                     <EmailIcon />
                     <Typography>Contact me</Typography>
                   </StyledButton>
